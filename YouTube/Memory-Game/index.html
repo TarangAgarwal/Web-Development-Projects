@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Memory Game</h1>
+    </header>
+
+    <div class="container">
+        <section class="instructions">
+            <h3>Instructions</h3>
+            <ol>
+                <li>Flip over any two cards.</li>
+                <li>If the two cards match, they stayed flipped.</li>
+                <li>If they don't match, they turn back over.</li>
+                <li>Remember what was on each card and where it was.</li>
+                <li>Continue steps (i) to (iv) until all cards have been matched.</li>
+            </ol>
+        </section>
+
+        <section class="memory-game">
+            <div class="memory-card" data-framework="apple">
+                <img class="front-face" src="images/apple.png" alt="Apple"/>
+                <p class="back-face">Click To Flip</p>
+            </div>
+            <div class="memory-card" data-framework="apple">
+                <img class="front-face" src="images/apple.png" alt="Apple" />
+                <p class="back-face">Click To Flip</p>
+            </div>
+            <div class="memory-card" data-framework="banana">
+                <img class="front-face" src="images/banana.png" alt="Banana" />
+                <p class="back-face">Click To Flip</p>
+            </div>
+            <div class="memory-card" data-framework="banana">
+                <img class="front-face" src="images/banana.png" alt="Banana" />
+                <p class="back-face">Click To Flip</p>
+            </div>
+            <div class="memory-card" data-framework="mango">
+                <img class="front-face" src="images/mango.png" alt="Mango" />
+                <p class="back-face">Click To Flip</p>
+            </div>
+            <div class="memory-card" data-framework="mango">
+                <img class="front-face" src="images/mango.png" alt="Mango" />
+                <p class="back-face">Click To Flip</p>
+            </div>
+            <div class="memory-card" data-framework="grapes">
+                <img class="front-face" src="images/grapes.png" alt="Grapes" />
+                <p class="back-face">Click To Flip</p>
+            </div>
+            <div class="memory-card" data-framework="grapes">
+                <img class="front-face" src="images/grapes.png" alt="Grapes" />
+                <p class="back-face">Click To Flip</p>
+            </div>
+            <div class="memory-card" data-framework="orange">
+                <img class="front-face" src="images/orange.png" alt="Orange" />
+                <p class="back-face">Click To Flip</p>
+            </div>
+            <div class="memory-card" data-framework="orange">
+                <img class="front-face" src="images/orange.png" alt="Orange" />
+                <p class="back-face">Click To Flip</p>
+            </div>
+            <div class="memory-card" data-framework="watermelon">
+                <img class="front-face" src="images/watermelon.png" alt="Watermelon" />
+                <p class="back-face">Click To Flip</p>
+            </div>
+            <div class="memory-card" data-framework="watermelon">
+                <img class="front-face" src="images/watermelon.png" alt="Watermelon" />
+                <p class="back-face">Click To Flip</p>
+            </div>
+        </section>
+
+        <section class="info">
+            <p id="turns-played">Turns Played: 0</p>
+            <p id="best-score">Best Score: </p>
+            <button onclick="playAgain()">Play Again</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

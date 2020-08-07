@@ -1,0 +1,542 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Asap condensed", sans-serif;
+    word-spacing: 5px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #060ab2;
+}
+
+header {
+    background-color: #060852;
+    padding: 20px;
+}
+
+header > h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 40px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 29% 39% 29%;
+    grid-column-gap: 1.5%;
+    grid-row-gap: 0;
+    margin-top: 50px;
+}
+
+.memory-game {
+    width: 100%;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-column-gap: 1.33%;
+    grid-row-gap: 10px;
+    margin: auto;
+    margin-bottom: 50px;
+    -webkit-perspective: 1000px;
+}
+
+h3 {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.8em;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+ol {
+    line-height: 1.5em;
+    margin-left: 15px;
+    margin-right: 15px;
+    list-style-type: lower-roman;
+    font-size: 1.25em;
+    padding-left: 40px;
+}
+
+.instructions {
+    color: #fff;
+    margin-top: 33.33%;
+}
+
+.info {
+    color:#fff;
+    font-size: 2em;
+    text-align: center;
+    line-height: 1.5em;
+    margin: 45% auto 0 auto;
+    font-weight: bold;
+}
+
+button {
+    font-size: 0.75em;
+    padding: 8px;
+    font-weight: bold;
+    border: 2px solid #000;
+    margin-top: 15px;
+}
+
+.memory-card {
+    width: 100%;
+    height: 100%;
+    -webkit-transform: scale(1);
+    -webkit-transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.memory-card:active {
+    -webkit-transform: scale(.97);
+    transition: transform .2s;
+}
+
+.memory-card.flip {
+    -webkit-transform: rotateY(180deg);
+    transition: transform .5s;
+}
+
+.front-face, .back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20%;
+    border-radius: 5px;
+    position: absolute;
+    background: #1c7ccc;
+    -webkit-backface-visibility: hidden;
+    border: 1px solid #000;
+}
+
+.front-face {
+    -webkit-transform: rotateY(180deg);
+    background-color: #85ff85;
+}
+
+.back-face {
+    font-family: 'Bangers', cursive;
+    text-align: center;
+    font-size: 48px;
+    padding: 15px;
+    overflow: hidden;
+}
+
+@media (max-width: 1299px) and (min-width: 1200px) {
+    .memory-game {
+        height: 70vh;
+    }
+
+    .back-face {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 1100px) {
+    ol {
+        font-size: 1.15em;
+    }
+
+    h3 {
+        font-size: 1.6em;
+    }
+
+    .info {
+        font-size: 1.6em;
+    }
+
+    .memory-game {
+        height: 70vh;
+    }
+
+    .back-face {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 1099px) and (min-width: 1000px) {
+    ol {
+        font-size: 1.1em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    .info {
+        font-size: 1.5em;
+    }
+
+    .memory-game {
+        height: 65vh;
+    }
+
+    .back-face {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 999px) and (min-width: 900px) {
+    ol {
+        font-size: 0.9em;
+    }
+
+    .memory-game {
+        height: 60vh;
+    }
+
+    .back-face {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 899px) and (min-width: 800px) {
+    ol {
+        font-size: 0.8em;
+    }
+
+    h3 {
+        font-size: 1.35em;
+    }
+
+    .info {
+        font-size: 1.35em;
+    }
+
+    .memory-game {
+        height: 55vh;
+    }
+
+    .back-face {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 799px) and (min-width: 700px) {
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .container {
+        grid-template-columns: 60% 35%;
+        margin-top: 30px;
+    }
+
+    .instructions {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin-top: 70px;
+        margin-bottom: 30px;
+    }
+
+    ol {
+        font-size: 1em;
+        padding-left: 180px;
+    }
+
+    .memory-game {
+        margin-left: 30px;
+        height: 65vh;
+    }
+
+    .back-face {
+        font-size: 38px;
+    }
+
+    .info {
+        font-size: 1.5em;
+        margin: 125px auto 0 auto;
+    }
+}
+
+@media (max-width: 699px) and (min-width: 576px) {
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    
+    .container {
+        grid-template-columns: 60% 35%;
+        margin-top: 25px;
+    }
+
+    .instructions {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin-top: 70px;
+        margin-bottom: 25px;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    ol {
+        font-size: 1em;
+        padding-left: 100px;
+    }
+
+    .memory-game {
+        margin: 0 20px 25px 20px;
+        height: 60vh;
+    }
+
+    .back-face {
+        font-size: 34px;
+    }
+
+    .info {
+        font-size: 1.35em;
+        margin: 150px auto 0 auto;
+    }
+}
+
+@media (max-width: 575px) and (min-width: 526px) {
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .container {
+        grid-template-columns: 5% 90% 5%;
+        margin-top: 15px;
+    }
+
+    .instructions {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        margin-top: 80px;
+        margin-bottom: 25px;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    ol {
+        font-size: 1em;
+        padding-left: 100px;
+    }
+
+    .memory-game {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-template-columns: 24% 24% 24% 24%;
+        margin-bottom: 25px;
+        height: 65vh;
+    }
+
+    .back-face {
+        font-size: 33px;
+        line-height: 1.4em;
+    }
+
+    .info {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        font-size: 1.35em;
+        margin: 0 auto 20px auto;
+    }
+}
+
+@media (max-width: 525px) and (min-width: 400px) {
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .container {
+        grid-template-columns: 5% 90% 5%;
+        margin-top: 15px;
+    }
+
+    .instructions {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        margin-top: 80px;
+        margin-bottom: 25px;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    ol {
+        font-size: 0.85em;
+    }
+
+    .memory-game {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-template-columns: 24% 24% 24% 24%;
+        margin-bottom: 25px;
+        height: 60vh;
+    }
+
+    .back-face {
+        font-size: 35px;
+        line-height: 1em;
+    }
+
+    .info {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        font-size: 1.2em;
+        margin: 0 auto 20px auto;
+    }
+}
+
+@media (max-width: 399px) and (min-width: 350px) {
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .container {
+        grid-template-columns: 5% 90% 5%;
+        margin-top: 15px;
+    }
+
+    .instructions {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        margin-top: 80px;
+        margin-bottom: 25px;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    ol {
+        font-size: 0.85em;
+    }
+
+    .memory-game {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-template-columns: 24% 24% 24% 24%;
+        margin-bottom: 25px;
+        height: 50vh;
+    }
+
+    .back-face {
+        font-size: 28px;
+        line-height: 1em;
+    }
+
+    .info {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        font-size: 1.1em;
+        margin: 0 auto 20px auto;
+    }
+}
+
+@media (max-width: 349px) and (min-width: 320px) {
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .container {
+        grid-template-columns: 5% 90% 5%;
+        margin-top: 15px;
+    }
+
+    .instructions {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        margin-top: 80px;
+        margin-bottom: 25px;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    ol {
+        font-size: 0.75em;
+    }
+
+    .memory-game {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-template-columns: 24% 24% 24% 24%;
+        margin-bottom: 25px;
+        height: 45vh;
+    }
+
+    .back-face {
+        font-size: 25px;
+        line-height: 1em;
+    }
+
+    .info {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        font-size: 1.1em;
+        margin: 0 auto 20px auto;
+    }
+}
+
+@media (max-width: 319px) and (min-width: 0px) {
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .container {
+        grid-template-columns: 5% 90% 5%;
+        margin-top: 15px;
+    }
+
+    .instructions {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        margin-top: 60px;
+        margin-bottom: 25px;
+    }
+
+    header > h1 {
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    ol {
+        font-size: 0.7em;
+    }
+
+    .memory-game {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-template-columns: 24% 24% 24% 24%;
+        margin-bottom: 25px;
+        height: 35vh;
+    }
+
+    .back-face {
+        font-size: 15px;
+        line-height: 1em;
+    }
+
+    .info {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        font-size: 1em;
+        margin: 0 auto 20px auto;
+    }
+}
